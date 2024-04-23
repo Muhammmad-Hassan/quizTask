@@ -11,6 +11,6 @@ document.getElementById("studentForm").addEventListener("submit", function (even
     return true;
   });
   if (valid) {
-    window.location.href = "/quiz-app-main/quiz.html";
+    window.location.href = "/quiz.html";
   }
 });
