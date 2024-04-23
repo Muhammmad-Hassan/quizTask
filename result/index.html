@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+        <h1 class="text-center text-green-500 text-3xl mb-8">Your Quiz Result</h1>
+        <div class="result-details">
+            <table class="w-full mb-8">
+                <tr>
+                    <th class="py-2 bg-gray-200">Student Details</th>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Roll No</td>
+                    <td class="border px-4 py-2">Name</td>
+                    <td class="border px-4 py-2">Batch</td>
+                    <td class="border px-4 py-2">Section</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2" id="roll-no"></td>
+                    <td class="border px-4 py-2" id="name"></td>
+                    <td class="border px-4 py-2" id="batch"></td>
+                    <td class="border px-4 py-2" id="section"></td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Total Marks</td>
+                    <td class="border px-4 py-2" colspan="3" id="total-marks"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const getItem = (key) => sessionStorage.getItem(key);
+        const setTextContent = (id, value) => document.getElementById(id).textContent = value;
+
+        const rollNo = getItem("rollNo");
+        const name = getItem("name");
+        const batch = getItem("batch");
+        const section = getItem("section");
+        const totalMarks = getItem("quizResult");
+
+        setTextContent("roll-no", rollNo);
+        setTextContent("name", name);
+        setTextContent("batch", batch);
+        setTextContent("section", section);
+        setTextContent("total-marks", totalMarks);
+
+    </script>
+</body>
+
+</html>
